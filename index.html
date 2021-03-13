@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Weather Dashboard</title>
 </head>
 <body>
+    <main class="flex-row justify-space-between">
+        <div class="col-12 col-md-4">
     
+          <div class="card">
+            <h3 class="card-header text-uppercase">Search By City</h3>
+            <form id="searchForm" class="card-body">
+              <label class="form-label" for="cityName">City</label>
+              <input name="cityName" id="cityName" type="text" autofocus="true" class="form-input" />
+              <button type="submit" class="btn">Search</button>
+            </form>
+          </div>
+    
+          <div class="card">
+            <h3 class="card-header text-uppercase">Search By List of Cities</h3>
+            <div id="cityListButtons" class="card-body">
+              <button cityList="Atlanta" class="btn">Atlanta</button>
+              <button cityList="Seattle" class="btn">Seattle</button>
+              <button cityList="Boise" class="btn">Boise</button>
+              <button cityList="Houston" class="btn">Houston</button>
+              <button cityList="Miami" class="btn">Miami</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8">
+            <h2 class="subtitle">Weather Forecast: <span id="weatherSearch"></span></h2>
+            <div id="weatherContainer" class="list-group">
+                <div id = "displayTemp"></div>
+            </div>
+        </main>
+<script src="./java.js"></script>
 </body>
 </html>
