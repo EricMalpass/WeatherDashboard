@@ -119,17 +119,6 @@ var displaytoday = function (weather, searchTerm) {
           const wind = weather.list[i].wind.speed;
           console.log(wind);
 
-          
-          const dT = weather.list[i].dt;
-          console.log(dT);
-          //const geoLat = weather.coord.lat;
-          //console.log(geoLat);
-          //const geoLong = weather.coord.lon;
-          //console.log(geoLong);
-
-          //getUV();
-
-          
           var dateDisplay = document.createElement('div');
           dateDisplay.innerHTML = date
           weatherContainerEl.appendChild(dateDisplay);
@@ -153,7 +142,7 @@ var displaytoday = function (weather, searchTerm) {
           //weatherContainerEl.innerHTML.appendChild(iconDisplay);
 
           var iconDisplay = document.createElement("img");
-          iconDisplay.setAttribute ("src", "http://openweathermap.org/img/w/${weather.list[].weather[0].icon}.png")
+          iconDisplay.setAttribute ("src", `http://openweathermap.org/img/w/${weather.list[i].weather[0].icon}.png`)
      
         }
   };
