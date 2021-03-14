@@ -135,18 +135,12 @@ var displaytoday = function (weather, searchTerm) {
           windDisplay.innerHTML = wind
           weatherContainerEl.appendChild(windDisplay);
 
-          //var iconDisplay = document.createElement('div');
-          //iconDisplay.innerHTML = icon
-          //weatherContainerEl.appendChild(iconDisplay)
-          //var iconDisplay = "<img src='http://openweathermap.org/img/wn/" + icon +"@2x.png' onerror='alert(1)'>";
-          //weatherContainerEl.innerHTML.appendChild(iconDisplay);
 
           var iconDisplay = document.createElement("img");
           iconDisplay.setAttribute ("src", `http://openweathermap.org/img/w/${weather.list[i].weather[0].icon}.png`)
           console.log(iconDisplay.src);
           console.log(iconDisplay);
-        
-     
+          weatherContainerEl.appendChild(iconDisplay);
         }
   };
 
