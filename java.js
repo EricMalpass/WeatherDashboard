@@ -4,6 +4,8 @@ var cityListButtonsEl = document.querySelector('#cityListButtons');
 var weatherContainerEl = document.querySelector('#weatherContainer');
 var searchButtonEl= document.querySelector('#searchForm');
 var displayTempEl = document.querySelector('#displayTemp');
+var todayTempEl = document.querySelector('#todayTemp');
+var todayContainerEl = document.querySelector('#todayContainer');
 
 
 var formSubmitHandler = function (event) {
@@ -14,7 +16,7 @@ var formSubmitHandler = function (event) {
     if (cityName) {
         getCityWeather(cityName);
   
-      weatherContainerEl.textContent = '';
+      todayContainerEl.textContent = '';
       cityNameInputEl.value = '';
     } else {
       alert('Please enter a city or else there is no point');
@@ -22,7 +24,6 @@ var formSubmitHandler = function (event) {
   };
 
 var getCityWeather = function (cityName) {
-    console.log(cityName);
     var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+ cityName +'&units=imperial&appid=80a1a6942bf842a6a3c370f838f9c965 ';
     fetch(apiUrl)
       .then(function (response) {
@@ -40,13 +41,11 @@ var getCityWeather = function (cityName) {
         alert('Unable to connect to weather dashboard');
       });
   };
-  //getCityWeather();
+getCityWeather();
   
-
-
 //current forecast
 var displaytoday = function (weather, searchTerm) {
-  for (let i = 0; i <= 2; i++) {
+  for (let i = 0; i <= 1; i++){
       const date = weather.list[i].dt_txt;
         console.log(date);
       const temperature = weather.list[i].main.temp;
@@ -66,23 +65,23 @@ var displaytoday = function (weather, searchTerm) {
 
       var dateDisplay = document.createElement('div');
           dateDisplay.innerHTML = date
-          weatherContainerEl.appendChild(dateDisplay);
+          todayContainerEl.appendChild(dateDisplay);
           
       var tempDisplay = document.createElement('div');
           tempDisplay.innerHTML = temperature
-          weatherContainerEl.appendChild(tempDisplay);
+          todayContainerEl.appendChild(tempDisplay);
 
       var humDisplay = document.createElement('div');
           humDisplay.innerHTML = humidity
-          weatherContainerEl.appendChild(humDisplay);
+          todayContainerEl.appendChild(humDisplay);
 
       var windDisplay = document.createElement('div');
           windDisplay.innerHTML = wind
-          weatherContainerEl.appendChild(windDisplay);
+          todayContainerEl.appendChild(windDisplay);
 
       var iconDisplay = document.createElement('div');
           iconDisplay.innerHTML = icon
-          weatherContainerEl.appendChild(iconDisplay)
+          todayContainerEl.appendChild(iconDisplay)
       
       var getUV = function (geoLat , geoLong ) {
         var apiUrl2 = 'http://api.openweathermap.org/data/2.5/uvi/forecast?lat='+ geoLat +'&lon='+ geoLong +'&start=' + dT +'&end=' + dT +'&appid=80a1a6942bf842a6a3c370f838f9c965';
@@ -103,14 +102,13 @@ var displaytoday = function (weather, searchTerm) {
         getUV();
     };
 }};
-
+//displaytoday();
   
   
 //five day
   var displaySearchCity = function (weather, searchTerm) {
-      for (let i = 0; i < 5; i ++) {
-          const date = weather.list[i].dt_txt;
-          //if weather.list[i].dt_txt = 
+      for (let i = 0; i <= 40; i +=8) {
+          const date = weather.list[i].dt_txt; 
           console.log(date);
           const temperature = weather.list[i].main.temp;
           console.log(temperature);
