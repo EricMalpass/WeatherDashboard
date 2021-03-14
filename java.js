@@ -143,6 +143,9 @@ var displaytoday = function (weather, searchTerm) {
 
           var iconDisplay = document.createElement("img");
           iconDisplay.setAttribute ("src", `http://openweathermap.org/img/w/${weather.list[i].weather[0].icon}.png`)
+          console.log(iconDisplay.src);
+          console.log(iconDisplay);
+        
      
         }
   };
