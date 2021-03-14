@@ -22,6 +22,7 @@ var formSubmitHandler = function (event) {
       alert('Please enter a city or else there is no point');
     }
   };
+   
 
 var getCityWeather = function (cityName) {
     var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+ cityName +'&units=imperial&appid=80a1a6942bf842a6a3c370f838f9c965 ';
@@ -43,9 +44,9 @@ var getCityWeather = function (cityName) {
   };
 getCityWeather();
   
-//current forecast
+//current today's forecast
 var displaytoday = function (weather, searchTerm) {
-  for (let i = 0; i <= 1; i++){
+  for (let i = 0; i < 1; i++){
       const date = weather.list[i].dt_txt;
         console.log(date);
       const temperature = weather.list[i].main.temp;
@@ -79,9 +80,11 @@ var displaytoday = function (weather, searchTerm) {
           windDisplay.innerHTML = wind
           todayContainerEl.appendChild(windDisplay);
 
-      var iconDisplay = document.createElement('div');
-          iconDisplay.innerHTML = icon
-          todayContainerEl.appendChild(iconDisplay)
+      var iconDisplay = document.createElement("img");
+          iconDisplay.setAttribute ("src", `http://openweathermap.org/img/w/${weather.list[i].weather[0].icon}.png`)
+          console.log(iconDisplay.src);
+          console.log(iconDisplay);
+          weatherContainerEl.appendChild(iconDisplay);
       
       var getUV = function (geoLat , geoLong ) {
         var apiUrl2 = 'http://api.openweathermap.org/data/2.5/uvi/forecast?lat='+ geoLat +'&lon='+ geoLong +'&start=' + dT +'&end=' + dT +'&appid=80a1a6942bf842a6a3c370f838f9c965';
@@ -99,7 +102,8 @@ var displaytoday = function (weather, searchTerm) {
         .catch(function (error) {
           alert('Unable to connect to weather dashboard for UV information');
         });
-        getUV();
+       getUV();
+       displaySearchCity(cityName);
     };
 }};
 //displaytoday();
@@ -107,13 +111,17 @@ var displaytoday = function (weather, searchTerm) {
   
 //five day
   var displaySearchCity = function (weather, searchTerm) {
-      for (let i = 0; i <= 40; i +=8) {
+      for (let i = 0; i < weather.list.length; i ++) {
+        if (weather.list[i].dt_txt.indexOf("12:00:00") !== -1) {
           const date = weather.list[i].dt_txt; 
           console.log(date);
+
           const temperature = weather.list[i].main.temp;
           console.log(temperature);
+
           const humidity = weather.list[i].main.humidity;
           console.log(humidity);
+
           const wind = weather.list[i].wind.speed;
           console.log(wind);
 
@@ -133,14 +141,13 @@ var displaytoday = function (weather, searchTerm) {
           windDisplay.innerHTML = wind
           weatherContainerEl.appendChild(windDisplay);
 
-
           var iconDisplay = document.createElement("img");
           iconDisplay.setAttribute ("src", `http://openweathermap.org/img/w/${weather.list[i].weather[0].icon}.png`)
           console.log(iconDisplay.src);
           console.log(iconDisplay);
           weatherContainerEl.appendChild(iconDisplay);
         }
-  };
+  }};
 
 
   var buttonClickHandler = function (event) {
