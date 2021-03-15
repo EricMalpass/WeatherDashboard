@@ -6,7 +6,7 @@ var searchButtonEl= document.querySelector('#searchForm');
 var displayTempEl = document.querySelector('#displayTemp');
 var todayTempEl = document.querySelector('#todayTemp');
 var todayContainerEl = document.querySelector('#todayContainer');
-
+var cityName = cityNameInputEl.value.trim();
 
 var formSubmitHandler = function (event) {
     event.preventDefault();
@@ -31,8 +31,8 @@ var getCityWeather = function (cityName) {
         if (response.ok) {
           response.json().then(function (data) {
             console.log(data);
-            displaySearchCity(data, cityName);
             displaytoday(data, cityName);
+            getCityPick2(data, cityName)
           });
         } else {
           alert('Error: ' + response.statusText);
@@ -43,6 +43,7 @@ var getCityWeather = function (cityName) {
       });
   };
 //getCityWeather();
+
   
 //current today's forecast
 var displaytoday = function (weather, searchTerm) {
@@ -93,7 +94,17 @@ var displaytoday = function (weather, searchTerm) {
           if (response.ok) {
             response.json().then(function (data) {
               console.log(data);
+              if (UVdata >= 8){
+              $(UVdata).attr("class", "red");
+              }if (UVdata < 3){
+              $(UVdata).attr("class", "green");
+              } else() {
+              $(UVdata).attr("class", "yellow");
+              };
+
+
               displaySearchCity(data, UVdata);
+              
             });
           } else {
             alert('Error: ' + response.statusText);
@@ -165,6 +176,23 @@ var displaytoday = function (weather, searchTerm) {
       if (response.ok) {
         response.json().then(function (data) {
             displaySearchCity(data,cityPick);
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+      console.log(response);
+    });
+  };
+ 
+
+  var getCityPick2 = function (cityName) {
+    
+    var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+ CityName +'&units=imperial&appid=80a1a6942bf842a6a3c370f838f9c965 ';
+
+    fetch(apiUrl).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (data) {
+            displaySearchCity(data,cityName);
         });
       } else {
         alert('Error: ' + response.statusText);

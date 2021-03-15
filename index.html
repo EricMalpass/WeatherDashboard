@@ -9,21 +9,21 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <main class="flex-row justify-space-between">
-        <div class="col-12 col-md-4">
+    <main>
+        <div>
     
           <aside>
-            <h3 class="card-header text-uppercase">Search By City</h3>
-            <form id="searchForm" class="card-body">
-              <label class="form-label" for="cityName">City</label>
-              <input name="cityName" id="cityName" type="text" autofocus="true" class="form-input" />
+            <h3>Search By City</h3>
+            <form id="searchForm">
+              <label for="cityName">City</label>
+              <input name="cityName" id="cityName" type="text" autofocus="true"/>
               <button type="submit" class="btn">Search</button>
             </form>
           </aside>
     
           <aside>
             <h3>Search By List of Cities</h3>
-            <div id="cityListButtons" class="card-body">
+            <div id="cityListButtons">
               <button cityList="Atlanta" class="btn">Atlanta</button>
               <button cityList="Seattle" class="btn">Seattle</button>
               <button cityList="Boise" class="btn">Boise</button>
@@ -33,12 +33,12 @@
           </div>
         <aside>
         <div>
-          <h2 class="subtitle">Today's Forecast: <span id="todaySearch"></span></h2>
+          <h2>Today's Forecast: <span id="todaySearch"></span></h2>
           <div id="todayContainer" class="list-group">
               <div id = "todayTemp"></div>
         <div>
             <h2>5 Day Weather Forecast: <span id="weatherSearch"></span></h2>
-            <div class= "container" >
+            <div id= "weatherContainer" >
                 <div id = "displayTemp"></div>
             </div>
         </main>
