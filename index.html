@@ -12,17 +12,17 @@
     <main class="flex-row justify-space-between">
         <div class="col-12 col-md-4">
     
-          <div class="card">
+          <aside>
             <h3 class="card-header text-uppercase">Search By City</h3>
             <form id="searchForm" class="card-body">
               <label class="form-label" for="cityName">City</label>
               <input name="cityName" id="cityName" type="text" autofocus="true" class="form-input" />
               <button type="submit" class="btn">Search</button>
             </form>
-          </div>
+          </aside>
     
-          <div class="card">
-            <h3 class="card-header text-uppercase">Search By List of Cities</h3>
+          <aside>
+            <h3>Search By List of Cities</h3>
             <div id="cityListButtons" class="card-body">
               <button cityList="Atlanta" class="btn">Atlanta</button>
               <button cityList="Seattle" class="btn">Seattle</button>
@@ -31,14 +31,14 @@
               <button cityList="Miami" class="btn">Miami</button>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-md-8">
+        <aside>
+        <div>
           <h2 class="subtitle">Today's Forecast: <span id="todaySearch"></span></h2>
           <div id="todayContainer" class="list-group">
               <div id = "todayTemp"></div>
-        <div class="col-12 col-md-8">
-            <h2 class="subtitle">5 Day Weather Forecast: <span id="weatherSearch"></span></h2>
-            <div id="weatherContainer" class="list-group">
+        <div>
+            <h2>5 Day Weather Forecast: <span id="weatherSearch"></span></h2>
+            <div class= "container" >
                 <div id = "displayTemp"></div>
             </div>
         </main>

@@ -42,7 +42,7 @@ var getCityWeather = function (cityName) {
         alert('Unable to connect to weather dashboard');
       });
   };
-getCityWeather();
+//getCityWeather();
   
 //current today's forecast
 var displaytoday = function (weather, searchTerm) {
@@ -81,7 +81,7 @@ var displaytoday = function (weather, searchTerm) {
           todayContainerEl.appendChild(windDisplay);
 
       var iconDisplay = document.createElement("img");
-          iconDisplay.setAttribute ("src", `http://openweathermap.org/img/w/${weather.list[0].weather[3].icon}.png`)
+          iconDisplay.setAttribute ("src", `http://openweathermap.org/img/w/${weather.list[0].weather[0].icon}.png`)
           console.log(iconDisplay.src);
           console.log(iconDisplay);
           todayContainerEl.appendChild(iconDisplay);

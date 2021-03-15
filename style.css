@@ -1,0 +1,15 @@
+
+
+
+
+
+.btn {
+background-color: gray;
+border: black;
+}
+
+
+.btn i:hover {
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+  }
