@@ -81,10 +81,10 @@ var displaytoday = function (weather, searchTerm) {
           todayContainerEl.appendChild(windDisplay);
 
       var iconDisplay = document.createElement("img");
-          iconDisplay.setAttribute ("src", `http://openweathermap.org/img/w/${weather.list[i].weather[0].icon}.png`)
+          iconDisplay.setAttribute ("src", `http://openweathermap.org/img/w/${weather.list[0].weather[3].icon}.png`)
           console.log(iconDisplay.src);
           console.log(iconDisplay);
-          weatherContainerEl.appendChild(iconDisplay);
+          todayContainerEl.appendChild(iconDisplay);
       
       var getUV = function (geoLat , geoLong ) {
         var apiUrl2 = 'http://api.openweathermap.org/data/2.5/uvi/forecast?lat='+ geoLat +'&lon='+ geoLong +'&start=' + dT +'&end=' + dT +'&appid=80a1a6942bf842a6a3c370f838f9c965';
