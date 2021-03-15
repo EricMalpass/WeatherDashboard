@@ -1,4 +1,3 @@
-
 var cityNameInputEl = document.querySelector('#cityName');
 var cityListButtonsEl = document.querySelector('#cityListButtons');
 var weatherContainerEl = document.querySelector('#weatherContainer');
@@ -205,4 +204,5 @@ var displaytoday = function (weather, searchTerm) {
   cityListButtonsEl.addEventListener('click', buttonClickHandler);
   searchButtonEl.addEventListener('submit', formSubmitHandler);
 
+  
   
