@@ -70,15 +70,15 @@ var displaytoday = function (weather, searchTerm) {
           todayContainerEl.appendChild(dateDisplay);
           
       var tempDisplay = document.createElement('div');
-          tempDisplay.innerHTML = temperature
+          tempDisplay.innerHTML = "Temperature: " +temperature
           todayContainerEl.appendChild(tempDisplay);
 
       var humDisplay = document.createElement('div');
-          humDisplay.innerHTML = humidity
+          humDisplay.innerHTML = "Humidity: " +humidity
           todayContainerEl.appendChild(humDisplay);
 
       var windDisplay = document.createElement('div');
-          windDisplay.innerHTML = wind
+          windDisplay.innerHTML = "Wind speed: " +wind
           todayContainerEl.appendChild(windDisplay);
 
       var iconDisplay = document.createElement("img");
@@ -94,13 +94,13 @@ var displaytoday = function (weather, searchTerm) {
           if (response.ok) {
             response.json().then(function (data) {
               console.log(data);
-              if (data >= 8){
-              $(data).attr("class", "red");
-              }if (data < 3){
-              $(data).attr("class", "green");
-              } else {
-              $(data).attr("class", "yellow");
-              };
+              //if (data >= 8){
+              //$(data).attr("class", "red");
+              //}if (data < 3){
+              //$(data).attr("class", "green");
+              //} else {
+              //$(data).attr("class", "yellow");
+              //};
 
 
               displaySearchCity(data, UVdata);
@@ -142,15 +142,15 @@ var displaytoday = function (weather, searchTerm) {
           weatherContainerEl.appendChild(dateDisplay);
           
           var tempDisplay = document.createElement('div');
-          tempDisplay.innerHTML = temperature
+          tempDisplay.innerHTML = "Temperature: " +temperature
           weatherContainerEl.appendChild(tempDisplay);
 
           var humDisplay = document.createElement('div');
-          humDisplay.innerHTML = humidity
+          humDisplay.innerHTML = "Humidity: " +humidity
           weatherContainerEl.appendChild(humDisplay);
 
           var windDisplay = document.createElement('div');
-          windDisplay.innerHTML = wind
+          windDisplay.innerHTML = "Wind speed: " +wind
           weatherContainerEl.appendChild(windDisplay);
 
           var iconDisplay = document.createElement("img");
