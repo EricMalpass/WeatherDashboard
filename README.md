@@ -14,3 +14,25 @@ WHEN I view future weather conditions for that city
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
+
+![Screenshots](./startscreen.PNG)
+
+
+![Screenshots](./citysearch.PNG)
+
+
+![Screenshots](./searchbybutton.PNG)
+
+I recieve alot of support from my study group, tutur, askbcs tuturs, and various websites: 
+
+Study Group:
+
+-Li Hua Anderson
+
+-Sam Oberg
+
+-Kelly Dean Mahaffey
+
+Tutur
+
+-Quint Turner
