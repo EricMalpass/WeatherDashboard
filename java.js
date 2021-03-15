@@ -24,7 +24,7 @@ var formSubmitHandler = function (event) {
    
 
 var getCityWeather = function (cityName) {
-    var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+ cityName +'&units=imperial&appid=1eb17488ca9670d4cf03b87ad6c21355 ';
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?q='+ cityName +'&units=imperial&appid=1eb17488ca9670d4cf03b87ad6c21355 ';
     fetch(apiUrl)
       .then(function (response) {
         if (response.ok) {
@@ -81,13 +81,13 @@ var displaytoday = function (weather, searchTerm) {
           todayContainerEl.appendChild(windDisplay);
 
       var iconDisplay = document.createElement("img");
-          iconDisplay.setAttribute ("src", `http://openweathermap.org/img/w/${weather.list[0].weather[0].icon}.png`)
+          iconDisplay.setAttribute ("src", `https://openweathermap.org/img/w/${weather.list[0].weather[0].icon}.png`)
           console.log(iconDisplay.src);
           console.log(iconDisplay);
           todayContainerEl.appendChild(iconDisplay);
       
       var getUV = function (geoLat , geoLong ) {
-        var apiUrl2 = 'http://api.openweathermap.org/data/2.5/uvi/forecast?lat='+ geoLat +'&lon='+ geoLong +'&start=' + dT +'&end=' + dT +'&appid=1eb17488ca9670d4cf03b87ad6c21355';
+        var apiUrl2 = 'https://api.openweathermap.org/data/2.5/uvi/forecast?lat='+ geoLat +'&lon='+ geoLong +'&start=' + dT +'&end=' + dT +'&appid=1eb17488ca9670d4cf03b87ad6c21355';
         fetch(apiUrl2)
         .then(function (response) {
           if (response.ok) {
@@ -153,7 +153,7 @@ var displaytoday = function (weather, searchTerm) {
           weatherContainerEl.appendChild(windDisplay);
 
           var iconDisplay = document.createElement("img");
-          iconDisplay.setAttribute ("src", `http://openweathermap.org/img/w/${weather.list[i].weather[0].icon}.png`)
+          iconDisplay.setAttribute ("src", `https://openweathermap.org/img/w/${weather.list[i].weather[0].icon}.png`)
           console.log(iconDisplay.src);
           console.log(iconDisplay);
           weatherContainerEl.appendChild(iconDisplay);
@@ -170,7 +170,7 @@ var displaytoday = function (weather, searchTerm) {
   };
 
   var getCityPick = function (cityPick) {
-    var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q='+ cityPick +'&units=imperial&appid=1eb17488ca9670d4cf03b87ad6c21355 ';
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?q='+ cityPick +'&units=imperial&appid=1eb17488ca9670d4cf03b87ad6c21355 ';
 
     fetch(apiUrl).then(function (response) {
       if (response.ok) {
